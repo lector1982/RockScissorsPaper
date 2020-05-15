@@ -90,8 +90,25 @@ document.addEventListener('DOMContentLoaded', function () {
 	}
 
 	userField.addEventListener('click', choiceUser);
-	out.addEventListener('click', outGame);
+	// out.addEventListener('click', outGame);
 	play.addEventListener('click', playGame);
+
+
+	document.addEventListener(".out", function () { 
+		navigator.notification.confirm(
+			'Do you want to quit', 
+			onConfirmQuit, 
+			'QUIT TITLE', 
+			'OK,Cancel'  
+			);
+	}, true); 
+
+
+	function onConfirmQuit(button){
+		if(button == "1"){
+			navigator.app.exitApp(); 
+		}
+	}
 });
 
 
