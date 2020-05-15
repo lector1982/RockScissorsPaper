@@ -3,7 +3,9 @@ document.addEventListener('DOMContentLoaded', function () {
 	countComp = document.querySelector('.count-comp'),
 	userField = document.querySelector('.user-field'),
 	compField = document.querySelector('.comp-field'),
-	sound = document.querySelector('.sound');
+	sound = document.querySelector('.sound'),
+	play = document.querySelector('.play'),
+	out = document.querySelector('.out');
 
 	let res = document.querySelector('.result');
 	let countU = 0;
@@ -72,7 +74,23 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 	}
 
+	function outGame() {
+		window.close();
+	}
+
+	function playGame() {
+		countU = 0;
+		countC = 0;
+		res.innerText = 'Сделайте выбор';
+		countUser.innerText = '0';
+		countComp.innerText = '0';
+		let fields = document.querySelectorAll('.field');
+		fields.forEach(item => item.classList.remove('active', 'error'));
+	}
+
 	userField.addEventListener('click', choiceUser);
+	out.addEventListener('click', outGame);
+	play.addEventListener('click', playGame);
 });
 
 
