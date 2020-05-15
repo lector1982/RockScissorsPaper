@@ -76,6 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	function outGame() {
 		window.close();
+		navigator.app.exitApp();
 	}
 
 	function playGame() {
